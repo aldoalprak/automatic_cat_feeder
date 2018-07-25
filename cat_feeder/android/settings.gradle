@@ -1,0 +1,3 @@
+rootProject.name = 'cat_feeder'
+
+include ':app'
