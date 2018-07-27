@@ -1,33 +1,44 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import { View } from "react-native";
 import { Button, Text, Icon } from "native-base";
 import styles from "../styles";
-import Header from "./Header.js";
+import Header from "./Header";
 import PercentageCircle from "react-native-percentage-circle";
+import db from "../helpers/firebase.js"
 
 class Home extends Component {
+
+  state = {
+    foodStatus: {}
+  }
+
+
   componentDidMount() {
-    // alert(this.props.navigation);
+    // Other file
+    // alert(db);
+    // console.log(firebase.database());
+    // db.ref('foodStatus/').on("value", snapshot => {
+    //   this.state.foodStatus = snapshot.val()
+    //   alert(snapshot)
+    //   console.log(snapshot)
+    // })
   }
 
   render() {
-    // closeDrawer = () => {
-    //   this.drawer._root.close();
-    // };
-    // openDrawer = () => {
-    //   this.drawer._root.open();
-    // };
     return (
       <View>
         <Header navigation={this.props.navigation} />
         <View style={styles.container}>
           <PercentageCircle
             radius={120}
-            percent={70}
-            color={"#e3e3e3"}
-            innerColor={"#e3e3e3"}
-            bgcolor={"#000"} // sisa
+            percent={100}
+            color={"green"}
+            innerColor={"white"}
+            bgcolor={"#e3e3e3"} // sisa
+            borderWidth={25}
+            children={<Text> Food Meter</Text>}
           >
+
             {/* <Image style={{width:20,height:20}} source={{require('your image')}} /> */}
           </PercentageCircle>
           <Button iconLeft rounded success style={styles.feedButton}>

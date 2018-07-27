@@ -20,7 +20,7 @@ import SideBar from "./src/containers/Sidebar.js";
 // );
 const RootStack = createDrawerNavigator(
   {
-    Home: { screen: HomeScreen },
+    Dashboard: { screen: HomeScreen },
     Mode: { screen: ModeScreen }
   },
   {
