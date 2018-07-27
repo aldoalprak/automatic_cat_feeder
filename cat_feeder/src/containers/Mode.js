@@ -19,64 +19,20 @@ import Store from '../mobx/store.js'
 import styles from "../styles/index.js";
 
 @observer class Mode extends Component {
-  state = {
-    isDateTimePickerVisible: false,
-    isDateTimePickerVisible2: false,
-    timeMorning: "",
-    timeEvening: "",
-  };
-
-  _showDateTimePicker() {
-    this.setState(
-      {
-        isDateTimePickerVisible: true
-      });
-  }
-
-  _showDateTimePicker2() {
-    this.setState(
-      {
-        isDateTimePickerVisible2: true
-      });
-  }
-
-  _hideDateTimePicker() {
-    this.setState(
-      {
-        isDateTimePickerVisible: false
-      });
-  }
-
-  _hideDateTimePicker2() {
-    this.setState(
-      {
-        isDateTimePickerVisible2: false
-      });
-  }
-
-  statusChange() {
-    if (!Store.state.modeStatus) {
-      Store.state.modeStatus = true
-    } else {
-      Store.state.modeStatus = false
-    }
-  }
 
   _handleDatePicked(time) {
-    console.log("====", time)
-    this._hideDateTimePicker();
-    this.setState({
-      timeMorning: time.toLocaleTimeString('it-IT')
-    })
+    // console.log("====", Number(time.toLocaleTimeString('it-IT').slice(0, 5).split(":").join("")))
+    Store._hideDateTimePicker();
+    Store.state.timeMorning = time.toLocaleTimeString('it-IT').slice(0, 5)
   };
 
   _handleDatePicked2(time) {
-    console.log("====", "timezzz")
-    this._hideDateTimePicker2();
-    this.setState({
-      timeEvening: time.toLocaleTimeString('it-IT')
-    })
+    console.log("====", time.toLocaleTimeString('it-IT'))
+    Store._hideDateTimePicker2();
+    Store.state.timeEvening = time.toLocaleTimeString('it-IT').slice(0, 5)
+
   };
+
 
   render() {
     return (
@@ -107,7 +63,7 @@ import styles from "../styles/index.js";
           <Right>
             <Switch
               value={Store.state.modeStatus}
-              onValueChange={this.statusChange.bind(this)}
+              onValueChange={() => Store.statusChange()}
             />
           </Right>
         </ListItem>
@@ -124,10 +80,10 @@ import styles from "../styles/index.js";
                 </Left>
                 <Body>
                   <Text>Morning Feed</Text>
-                  <Text note numberOfLines={1}>{this.state.timeMorning}</Text>
+                  <Text note numberOfLines={1}>{Store.state.timeMorning}</Text>
                 </Body>
                 <Right>
-                  <Button success rounded onPress={this._showDateTimePicker.bind(this)}>
+                  <Button success rounded onPress={() => Store._showDateTimePicker()}>
                     <Text>Set</Text>
                   </Button>
                 </Right>
@@ -140,10 +96,10 @@ import styles from "../styles/index.js";
                 </Left>
                 <Body>
                   <Text>Evening Feed</Text>
-                  <Text note numberOfLines={1}>{this.state.timeEvening}</Text>
+                  <Text note numberOfLines={1}>{Store.state.timeEvening}</Text>
                 </Body>
                 <Right>
-                  <Button success rounded onPress={this._showDateTimePicker2.bind(this)}>
+                  <Button success rounded onPress={() => Store._showDateTimePicker2()}>
                     <Text>Set</Text>
                   </Button>
                 </Right>
@@ -152,16 +108,16 @@ import styles from "../styles/index.js";
 
             <DateTimePicker
               mode="time"
-              isVisible={this.state.isDateTimePickerVisible}
+              isVisible={Store.state.isDateTimePickerVisible}
               onConfirm={this._handleDatePicked.bind(this)}
-              onCancel={this._hideDateTimePicker.bind(this)}
+              onCancel={() => Store._hideDateTimePicker()}
               is24Hour={true}
             />
             <DateTimePicker
               mode="time"
-              isVisible={this.state.isDateTimePickerVisible2}
+              isVisible={Store.state.isDateTimePickerVisible2}
               onConfirm={this._handleDatePicked2.bind(this)}
-              onCancel={this._hideDateTimePicker2.bind(this)}
+              onCancel={() => Store._hideDateTimePicker2()}
               is24Hour={true}
             />
           </View>

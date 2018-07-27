@@ -1,19 +1,19 @@
-import firebase from "firebase";
+// import firebase from "firebase";
 
-const config = {
-    apiKey: "AIzaSyBds4d-9nFOlm6e5g55xevFOeu4uyS78ck",
-    authDomain: "catfeeder-bot.firebaseapp.com",
-    databaseURL: "https://catfeeder-bot.firebaseio.com",
-    projectId: "catfeeder-bot",
-    storageBucket: "catfeeder-bot.appspot.com",
-    messagingSenderId: "1051892162795"
-}
+// const config = {
+//     apiKey: "AIzaSyBkLnPgKCIo0ZiDLfZ5EHbzO0iImwSRNdU",
+//     authDomain: "catfeeder-38829.firebaseapp.com",
+//     databaseURL: "https://catfeeder-38829.firebaseio.com",
+//     projectId: "catfeeder-38829",
+//     storageBucket: "catfeeder-38829.appspot.com",
+//     messagingSenderId: "99979817127"
+// }
 
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 
-const db = firebase.database();
+// const db = firebase.database();
 
-export default db
+// export default db
 
 
 

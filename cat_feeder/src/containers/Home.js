@@ -4,7 +4,7 @@ import { Button, Text, Icon } from "native-base";
 import styles from "../styles";
 import Header from "./Header";
 import PercentageCircle from "react-native-percentage-circle";
-import db from "../helpers/firebase.js"
+// import db from "../helpers/firebase.js"
 
 class Home extends Component {
 
@@ -18,9 +18,9 @@ class Home extends Component {
     // alert(db);
     // console.log(firebase.database());
     // db.ref('foodStatus/').on("value", snapshot => {
-    //   this.state.foodStatus = snapshot.val()
-    //   alert(snapshot)
-    //   console.log(snapshot)
+    // this.state.foodStatus = snapshot.val()
+    // alert("snapshot")
+    // console.log(snapshot)
     // })
   }
 

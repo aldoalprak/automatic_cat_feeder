@@ -4,24 +4,13 @@ import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import HomeScreen from "./src/containers/Home";
 import ModeScreen from "./src/containers/Mode";
 import SideBar from "./src/containers/Sidebar.js";
-// const RootStack = createStackNavigator(
-//   {
-//     Home: {
-//       screen: Home
-//     }
-//   },
-//   {
-//     initialRouteName: "Home",
-//     headerMode: "none",
-//     navigationOptions: {
-//       headerVisible: false
-//     }
-//   }
-// );
+import NotificationScreen from "./src/containers/Notification.js";
+
 const RootStack = createDrawerNavigator(
   {
     Dashboard: { screen: HomeScreen },
-    Mode: { screen: ModeScreen }
+    Mode: { screen: ModeScreen },
+    Notification: { screen: NotificationScreen }
   },
   {
     contentComponent: props => <SideBar {...props} />
