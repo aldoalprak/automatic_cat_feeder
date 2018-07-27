@@ -26,7 +26,7 @@ class HeaderComponent extends Component {
           </Button>
         </Left>
         <Body style={{ flex: 1 }}>
-          <Title>AutoFeed</Title>
+          <Title>Cat-Feeder-Bot</Title>
         </Body>
         <Right style={{ flex: 1 }}>
           <Button transparent>

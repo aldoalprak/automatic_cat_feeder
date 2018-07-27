@@ -3,14 +3,14 @@ import { Platform, StyleSheet, Text, View } from "react-native";
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import HomeScreen from "./src/containers/Home";
 import ModeScreen from "./src/containers/Mode";
-import SideBar from "./src/containers/Sidebar.js";
-import NotificationScreen from "./src/containers/Notification.js";
+import SideBar from "./src/components/Sidebar";
+import NotificationScreen from "./src/containers/Notifications.js";
 
 const RootStack = createDrawerNavigator(
   {
     Dashboard: { screen: HomeScreen },
     Mode: { screen: ModeScreen },
-    Notification: { screen: NotificationScreen }
+    Notifications: { screen: NotificationScreen }
   },
   {
     contentComponent: props => <SideBar {...props} />

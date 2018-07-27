@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { View } from "react-native";
 import { Button, Text, Icon } from "native-base";
 import styles from "../styles";
-import Header from "./Header";
+import Header from "../components/Header";
 import PercentageCircle from "react-native-percentage-circle";
 // import db from "../helpers/firebase.js"
 
