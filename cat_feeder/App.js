@@ -6,6 +6,7 @@ import ModeScreen from "./src/containers/Mode";
 import SideBar from "./src/components/Sidebar";
 import NotificationScreen from "./src/containers/Notifications.js";
 
+
 const RootStack = createDrawerNavigator(
   {
     Dashboard: { screen: HomeScreen },
