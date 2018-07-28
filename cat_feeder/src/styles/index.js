@@ -10,6 +10,12 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 25,
     color: "#01AC9A"
+  },
+  lastFedButton: {
+    alignSelf: "center",
+    marginTop: 45,
+    color: "grey",
+
   }
 });
 

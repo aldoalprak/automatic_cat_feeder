@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { Button, Text, Icon } from "native-base";
 import styles from "../styles";
 import Header from "../components/Header";
@@ -19,7 +19,7 @@ class Home extends Component {
     // console.log(db.ref)
     // console.log(firebase.database());
     // db.ref('done/').on("value", snapshot => {
-      // this.state.foodStatus = snapshot.val()
+    // this.state.foodStatus = snapshot.val()
     //   alert(snapshot.val())
     //   console.log(snapshot.val())
     // })
@@ -46,7 +46,12 @@ class Home extends Component {
             <Icon name="paw" />
             <Text>Feed ME!</Text>
           </Button>
+
+          <Button rounded style={styles.lastFedButton}>
+            <Text>Last Fed: 25/07/2018 at 16.00</Text>
+          </Button>
         </View>
+
       </View>
     );
   }
