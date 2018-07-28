@@ -4,7 +4,8 @@ import { Button, Text, Icon } from "native-base";
 import styles from "../styles";
 import Header from "../components/Header";
 import PercentageCircle from "react-native-percentage-circle";
-import db from "../helpers/firebase.js"
+import db from "../helpers/firebase.js";
+import { AsyncStorage } from "react-native"
 
 class Home extends Component {
 
@@ -13,16 +14,17 @@ class Home extends Component {
   }
 
 
-  componentDidMount() {
+  async componentDidMount() {
     // Other file
     // alert(db);
     // console.log(db.ref)
     // console.log(firebase.database());
-    // db.ref('done/').on("value", snapshot => {
-    // this.state.foodStatus = snapshot.val()
+    // db.ref('done/asdasd').on("value", snapshot => {
+    //   this.state.foodStatus = snapshot.val()
     //   alert(snapshot.val())
-    //   console.log(snapshot.val())
+    //   console.log(snapshot.val().name)
     // })
+    console.log("asynstorage", await AsyncStorage.getItem("uid"))
   }
 
   render() {

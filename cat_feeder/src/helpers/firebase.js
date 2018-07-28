@@ -5,16 +5,18 @@ import 'core-js/fn/symbol/iterator'
 
 
 const config = {
-    apiKey: "AIzaSyBkLnPgKCIo0ZiDLfZ5EHbzO0iImwSRNdU",
-    authDomain: "catfeeder-38829.firebaseapp.com",
-    databaseURL: "https://catfeeder-38829.firebaseio.com",
-    projectId: "catfeeder-38829",
-    storageBucket: "catfeeder-38829.appspot.com",
-    messagingSenderId: "99979817127"
+    apiKey: "AIzaSyBds4d-9nFOlm6e5g55xevFOeu4uyS78ck",
+    authDomain: "catfeeder-bot.firebaseapp.com",
+    databaseURL: "https://catfeeder-bot.firebaseio.com",
+    projectId: "catfeeder-bot",
+    storageBucket: "catfeeder-bot.appspot.com",
+    messagingSenderId: "1051892162795"
 }
 
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
 
-const db = firebase.database();
+const db = firebaseApp.database();
+const user = firebaseApp.auth();
+const storageRef = firebaseApp.storage()
 
-export default db
+export { db, user, storageRef }
