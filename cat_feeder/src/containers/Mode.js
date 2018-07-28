@@ -47,7 +47,7 @@ import styles from "../styles/index.js";
             </Button>
           </Left>
           <Body>
-            <Title>Mode</Title>
+            <Title>Schedule Feed</Title>
           </Body>
         </Header>
 

@@ -5,13 +5,18 @@ import HomeScreen from "./src/containers/Home";
 import ModeScreen from "./src/containers/Mode";
 import SideBar from "./src/components/Sidebar";
 import NotificationScreen from "./src/containers/Notifications.js";
-
+import ProfileScreen from "./src/containers/Profile.js";
+import LoginScreen from "./src/containers/Login.js";
+import EditProfileScreen from "./src/components/EditProfile"
 
 const RootStack = createDrawerNavigator(
   {
     Dashboard: { screen: HomeScreen },
-    Mode: { screen: ModeScreen },
-    Notifications: { screen: NotificationScreen }
+    "Schedule Feed": { screen: ModeScreen },
+    Notifications: { screen: NotificationScreen },
+    Profile: { screen: ProfileScreen },
+    Logout: { screen: LoginScreen },
+    EditProfile: { screen: EditProfileScreen }
   },
   {
     contentComponent: props => <SideBar {...props} />

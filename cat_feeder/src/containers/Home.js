@@ -16,13 +16,13 @@ class Home extends Component {
   componentDidMount() {
     // Other file
     // alert(db);
-    console.log(db.ref)
+    // console.log(db.ref)
     // console.log(firebase.database());
-    db.ref('done/').on("value", snapshot => {
+    // db.ref('done/').on("value", snapshot => {
       // this.state.foodStatus = snapshot.val()
-      alert(snapshot.val())
-      console.log(snapshot.val())
-    })
+    //   alert(snapshot.val())
+    //   console.log(snapshot.val())
+    // })
   }
 
   render() {

@@ -29,7 +29,7 @@ class HeaderComponent extends Component {
           <Title>Cat-Feeder-Bot</Title>
         </Body>
         <Right style={{ flex: 1 }}>
-          <Button transparent>
+          <Button transparent onPress={() => this.props.navigation.navigate('Notifications')}>
             <Icon name="ios-notifications" />
           </Button>
         </Right>
