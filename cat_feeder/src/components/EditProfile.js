@@ -35,6 +35,19 @@ export default class Profile extends Component {
                 this.setState({
                     profilePicture: { uri: res.uri }
                 })
+
+                fetch("https://us-central1-catfeeder-bot.cloudfunctions.net/storeImage", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        image: res.data
+                    })
+                })
+                    .catch(err => console.log(err))
+                    .then(res => res.json())
+                    .then(parsedRes => {
+                        console.log(parsedRes)
+                    })
+
             }
         })
     }
