@@ -12,7 +12,7 @@ class Notification extends Component {
                     style={{ backgroundColor: "#01AC9A" }}
                 >
                     <Left>
-                        <Button small onPress={() => this.props.navigation.goBack()} transparent>
+                        <Button small onPress={() => this.props.navigation.navigate("Dashboard")} transparent>
                             <Icon name="arrow-back" />
                         </Button>
                     </Left>

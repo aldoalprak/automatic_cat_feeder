@@ -4,6 +4,7 @@ import { Text, Content, Form, Item, Input, Button } from "native-base"
 import { observer } from 'mobx-react'
 import Store from '../mobx/store'
 
+
 @observer export default class Login extends Component {
 
     state = {
@@ -11,7 +12,12 @@ import Store from '../mobx/store'
         password: ""
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        // alert("masuk sini")
+        const status = await AsyncStorage.getItem("uid")
+        if (status) {
+            this.props.navigation.navigate("Dashboard")
+        }
     }
 
     emailChange(text) {
@@ -28,6 +34,7 @@ import Store from '../mobx/store'
     render() {
         return (
             <View>
+                {}
                 <View style={{ marginTop: 250 }}>
                     <Form>
                         <Item>

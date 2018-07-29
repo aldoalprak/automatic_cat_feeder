@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View, YellowBox } from "react-native";
 import { createStackNavigator, createDrawerNavigator } from "react-navigation";
 import HomeScreen from "./src/containers/Home";
 import ModeScreen from "./src/containers/Mode";
@@ -9,6 +9,7 @@ import ProfileScreen from "./src/containers/Profile.js";
 import LoginScreen from "./src/containers/Login.js";
 import RegisterScreen from "./src/containers/Register.js";
 import EditProfileScreen from "./src/components/EditProfile";
+
 
 const RootStack = createDrawerNavigator(
   {
@@ -27,6 +28,10 @@ const RootStack = createDrawerNavigator(
 );
 
 export default class App extends Component {
+  constructor() {
+    super();
+    YellowBox.ignoreWarnings(['Setting a timer']);
+  }
   render() {
     return <RootStack />;
   }

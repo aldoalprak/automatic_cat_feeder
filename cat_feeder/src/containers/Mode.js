@@ -42,7 +42,7 @@ import styles from "../styles/index.js";
           style={{ backgroundColor: "#01AC9A" }}
         >
           <Left>
-            <Button onPress={() => this.props.navigation.goBack()} transparent>
+            <Button onPress={() => this.props.navigation.navigate("Dashboard")} transparent>
               <Icon name="arrow-back" />
             </Button>
           </Left>

@@ -15,16 +15,10 @@ class Home extends Component {
 
 
   async componentDidMount() {
-    // Other file
-    // alert(db);
-    // console.log(db.ref)
-    // console.log(firebase.database());
-    // db.ref('done/asdasd').on("value", snapshot => {
-    //   this.state.foodStatus = snapshot.val()
-    //   alert(snapshot.val())
-    //   console.log(snapshot.val().name)
-    // })
-    console.log("asynstorage", await AsyncStorage.getItem("uid"))
+    const status = await AsyncStorage.getItem("uid")
+    if (!status) {
+      this.props.navigation.navigate("Logout")
+    }
   }
 
   render() {
@@ -34,7 +28,7 @@ class Home extends Component {
         <View style={styles.container}>
           <PercentageCircle
             radius={120}
-            percent={100}
+            percent={80}
             color={"green"}
             innerColor={"white"}
             bgcolor={"#e3e3e3"} // sisa

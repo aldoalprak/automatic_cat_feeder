@@ -11,8 +11,8 @@ import {
     ListItem,
     Right
 } from 'native-base'
-//#2 . add View component for custom styling
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import ImagePicker from 'react-native-image-picker'
 
 export default class Profile extends Component {
 
@@ -20,8 +20,23 @@ export default class Profile extends Component {
         data: {
             position: "Kuro",
             education: "Pet",
-            profilePicture: "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350",
+            profilePicture: null
         }
+    }
+
+    imagePickerHandler() {
+        ImagePicker.showImagePicker({ title: "Pick an image" }, res => {
+            if (res.didCancel) {
+                alert("canceled")
+            } else if (res.error) {
+                alert("error")
+            } else {
+                console.log("uri===", res.uri, "data===", res.data)
+                this.setState({
+                    profilePicture: { uri: res.uri }
+                })
+            }
+        })
     }
 
     render() {
@@ -64,9 +79,9 @@ export default class Profile extends Component {
                             zIndex: -1
                         }}
                         large
-                        source={{ uri: profilePicture }}
+                        source={this.state.profilePicture}
                     />
-                    <TouchableOpacity><Text>Change Photo</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={this.imagePickerHandler.bind(this)}><Text>Change Photo</Text></TouchableOpacity>
                 </View>
 
                 <View style={{ marginTop: 80 }}>
